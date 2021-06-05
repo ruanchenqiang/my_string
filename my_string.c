@@ -82,7 +82,7 @@ void my_string_append(my_string_t* my_str, const char* str, size_t size)
 		return;
 	}
 
-	// ÅĞ¶ÏÓĞÃ»ÓĞÎ»ÖÃ´æ·Å£¬Ã»ÓĞ»áÀ©Èİ
+	// åˆ¤æ–­æœ‰æ²¡æœ‰ä½ç½®å­˜æ”¾ï¼Œæ²¡æœ‰ä¼šæ‰©å®¹
 	if((my_str->size + size) >= my_str->capacity)
 	{
 		if(my_string_realloc(my_str, my_str->size + size + 1) == NULL)
@@ -103,7 +103,7 @@ void my_string_append_one_char(my_string_t* my_str, const char data)
 		return;
 	}
 
-	// ÅĞ¶ÏÓĞÃ»ÓĞÎ»ÖÃ´æ·Å£¬Ã»ÓĞ»áÀ©Èİ
+	// åˆ¤æ–­æœ‰æ²¡æœ‰ä½ç½®å­˜æ”¾ï¼Œæ²¡æœ‰ä¼šæ‰©å®¹
 	if((my_str->size + 1) >= my_str->capacity)
 	{
 		if(my_string_realloc(my_str, my_str->size + 1 + 1) == NULL)
@@ -293,7 +293,7 @@ void my_string_array_append(my_string_array_t* my_str_array, const char* str, si
 		return;
 	}
 
-	// ÅĞ¶ÏÓĞÃ»ÓĞÎ»ÖÃ´æ·Å£¬Ã»ÓĞ»áÀ©ÈİÎªÔ­À´µÄ2±¶
+	// åˆ¤æ–­æœ‰æ²¡æœ‰ä½ç½®å­˜æ”¾ï¼Œæ²¡æœ‰ä¼šæ‰©å®¹ä¸ºåŸæ¥çš„2å€
 	if(my_str_array->size >= my_str_array->capacity)
 	{
 		if(my_string_array_realloc(my_str_array, my_str_array->capacity * 2) == NULL)
@@ -354,7 +354,7 @@ void my_string_array_print(my_string_array_t* my_str_array)
 
 	for(idx = 0; idx < my_str_array->size; ++idx)
 	{
-	    printf("\t");
+		printf("\t");
 		my_string_print(my_str_array->data[idx]);
 	}
 }
@@ -382,7 +382,7 @@ my_string_array_t* my_raw_str_split(const char* src, const char* sep)
 	{
 		char* next = strstr(prev, sep);
 
-		// Ã»ÓĞËÑË÷µ½·Ö¸ô·û¾ÍÖ±½Ó½«Ö¸ÕëÒÆµ½½áÊø×Ö·ûÎ»ÖÃ
+		// æ²¡æœ‰æœç´¢åˆ°åˆ†éš”ç¬¦å°±ç›´æ¥å°†æŒ‡é’ˆç§»åˆ°ç»“æŸå­—ç¬¦ä½ç½®
 		if(next == NULL)
 		{
 			next = (char*)src + src_len;
@@ -399,9 +399,9 @@ my_string_array_t* my_raw_str_split(const char* src, const char* sep)
 
 		if(*prev == '\0')
 		{
-			// ¼ÓÈë¿Õ×Ö·û´®""
+			// åŠ å…¥ç©ºå­—ç¬¦ä¸²""
 			my_string_array_append(result, prev, 0);
-			//break; // ´Ë¾ä¿É¼Ó¿É²»¼Ó
+			//break; // æ­¤å¥å¯åŠ å¯ä¸åŠ 
 		}
 	}
 
